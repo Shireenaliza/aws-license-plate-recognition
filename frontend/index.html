@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Plate Recognition</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <h1>License Plate Recognition</h1>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2>Upload an Image</h2>
+            <form id="uploadForm">
+                <input type="file" id="imageInput" accept="image/*" required>
+                <button type="submit" id="uploadBtn">Upload</button>
+            </form>
+        </div>
+
+        <div id="statusContainer" class="status-container hidden">
+            <p id="statusText">Processing Image...</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div id="resultContainer" class="result-container hidden">
+            <h3>License Plate: <span id="plateResult"></span></h3>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 License Plate Recognition | BCSE355L AWS Solutions Architect Project | 22BAI1014 | 22BAI1095 | <a href="#">Contact Support</a></p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

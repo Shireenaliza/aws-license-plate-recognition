@@ -1,0 +1,22 @@
+# Environment
+.env
+*.env
+
+# Configuration
+frontend/config.js
+
+# Cloud Credentials / Local Logs
+.aws/
+*.pem
+*.key
+*.log
+
+# Python Backend / Virtual Environments
+__pycache__/
+*.py[cod]
+
+# OS / IDE Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
