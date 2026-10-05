@@ -86,11 +86,8 @@ information for debugging and monitoring.
 
 ------------------------------------------------------------------------
 
-## AWS Services Used
+## AWS Services Used and their roles
 
-  -----------------------------------------------------------------------
-  AWS Service                         Role in the Project
-  ----------------------------------- -----------------------------------
   **AWS Amplify**                     Hosts and serves the frontend
                                       application
 
@@ -107,13 +104,9 @@ information for debugging and monitoring.
                                       timestamps
 
   **AWS IAM**                         Controls permissions between AWS
-                                      services
+                                      services Provides logs and operational monitoring
 
-  **Amazon CloudWatch**               Provides logs and operational
-                                      monitoring
-  -----------------------------------------------------------------------
-
-------------------------------------------------------------------------
+  **Amazon CloudWatch**               Provides logs and operational monitoring
 
 # Setup & Deployment
 
@@ -126,8 +119,6 @@ Before deployment, make sure you have:
 -   A GitHub repository containing the project
 -   Python 3.x for Lambda development
 -   An AWS region selected for deployment
-
-------------------------------------------------------------------------
 
 ## 1. Create the Amazon S3 Bucket
 
@@ -148,8 +139,6 @@ with the bucket.
 -   Use IAM policies instead of broad public permissions.
 -   Enable encryption at rest.
 -   Consider lifecycle rules for automatically managing old uploads.
-
-------------------------------------------------------------------------
 
 ## 2. Create the DynamoDB Table
 
@@ -179,7 +168,6 @@ A stored record can contain information such as:
 > The exact attributes should match the implementation in
 > `backend/lambda_function.py`.
 
-------------------------------------------------------------------------
 
 ## 3. Configure IAM
 
@@ -201,8 +189,6 @@ For production deployments, replace broad managed policies such as
 `FullAccess` with **least-privilege custom policies** that allow only
 the required actions on the specific S3 bucket, DynamoDB table, and
 Rekognition operations.
-
-------------------------------------------------------------------------
 
 ## 4. Deploy AWS Lambda
 
@@ -238,8 +224,6 @@ DynamoDB
     ↓
 API Response
 ```
-
-------------------------------------------------------------------------
 
 ## 5. Configure API Gateway
 
@@ -285,7 +269,6 @@ After the build configuration is complete:
 6.  Open the generated Amplify URL.
 
 ------------------------------------------------------------------------
-
 # Testing the Application
 
 A typical test flow is:
@@ -335,8 +318,6 @@ A typical test flow is:
                                                    submission
   ------------------------------------------------------------------------
 
-------------------------------------------------------------------------
-
 # Data & Storage
 
 The system separates image storage from recognition metadata.
@@ -362,13 +343,3 @@ Additional Metadata
 
 This separation allows the application to keep object storage and
 structured application data independently managed.
-
-------------------------------------------------------------------------
-
-```{=html}
-<p align="center">
-```
-Built with AWS
-```{=html}
-</p>
-```
